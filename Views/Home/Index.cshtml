@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section Styles {
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hindari scroll vertikal */
+        }
+
+        .layout-wrapper, .page-content {
+            height: 100%;
+        }
+
+        #map {
+            height: 100dvh; /* Dynamic viewport height - responsif untuk mobile */
+            width: 100%;
+        }
+    </style>
+}
+
+<div id="map"></div>
+
+@section Scripts {
+    <script src="~/js/pages/index.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4jqcen5Xqrgck4V73aL6VepyKp2_wK1U&callback=initMap" async defer></script>
+}
