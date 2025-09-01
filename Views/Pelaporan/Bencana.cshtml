@@ -1,0 +1,212 @@
+@{
+    ViewData["Title"] = "Form Pelaporan Bencana";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css" />
+    <link href="~/lib/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="px-3">
+    <div class="container-fluid">
+        <div class="py-3 py-lg-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="page-title mb-0">Form Pelaporan Bencana</h4>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-none d-lg-block">
+                        <ol class="breadcrumb m-0 float-end">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pelaporan</a></li>
+                            <li class="breadcrumb-item active">Laporan Bencana</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-horizontal" role="form" id="formLaporanBencana">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Identitas Pemohon</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Nama</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="nama_pemohon" name="nama_pemohon" class="form-control" placeholder="Masukan Nama Lengkap">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Alamat</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="alamat" name="alamat" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Kota/Kabupaten</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="kota" name="kota" class="form-control" placeholder="Masukan Kota/Kabupaten">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Keterangan Laporan</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Tanggal dan Waktu</label>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <input type="text" id="datetime" name="datetime" class="form-control w-80" placeholder="pilih tanggal dan waktu">
+                                                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Lokasi Banjir</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="lokasi" name="lokasi" class="form-control" placeholder="Masukan Lokasi Banjir">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Tinggi Genangan (cm)</label>
+                                            <div class="col-md-10">
+                                                <input type="number" id="tinggi" name="tinggi" class="form-control" placeholder="Masukan Ketinggian Banjir" step="0.1">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Sungai Terdekat</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="sungai_terdekat" name="sungai_terdekat" class="form-control" placeholder="Masukan Sungai Terdekat">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Penyebab Banjir</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="penyebab" name="penyebab" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Akibat Banjir</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="akibat" name="akibat" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Tindak Lanjut/Koordinasi</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="koordinasi" name="koordinasi" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Sumber Laporan</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="kota" name="kota" class="form-control" placeholder="Masukan Sumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Upload Berkas</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-3">
+                                            <label class="form-label">Upload Foto/Dokumen Pendukung</label>
+                                            <div class="dropzone" id="myDropzone">
+                                                <div class="dz-message">
+                                                    <div class="mb-3">
+                                                        <i class="mdi mdi-cloud-upload display-4 text-muted"></i>
+                                                    </div>
+                                                    <h4>Drop files here or click to upload.</h4>
+                                                    <p class="text-muted font-13">
+                                                        (Format yang didukung: JPG, PNG, PDF, DOC, DOCX - Maksimal 5MB per file)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Progress Bar -->
+                                        <div class="progress mb-3" id="uploadProgress" style="display: none;">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                                role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        
+                                        <!-- File List -->
+                                        <div id="fileList" class="mb-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="d-flex justify-content-end gap-2">
+                                            <!-- Tombol Reset/Clear -->
+                                            <button type="button" class="btn btn-outline-secondary" id="btnReset">
+                                                <i class="mdi mdi-refresh me-1"></i>Reset Form
+                                            </button>
+                                            
+                                            <!-- Tombol Submit Utama -->
+                                            <button type="submit" class="btn btn-success" id="btnSubmit">
+                                                <i class="mdi mdi-send me-1"></i>Kirim Laporan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/flatpickr/flatpickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
+    @* <script src="~/lib/moment/min/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/id.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.43/moment-timezone.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.js"></script> *@
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            flatpickr("#datetime", {
+                enableTime: true,         
+                dateFormat: "Y-m-d H:i",  
+                altInput: true,           
+                altFormat: "j F Y H:i",   
+                time_24hr: true,          
+                locale: "id"              
+            });
+        });
+    </script>
+}

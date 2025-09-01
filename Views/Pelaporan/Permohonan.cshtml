@@ -1,0 +1,227 @@
+@{
+    ViewData["Title"] = "Form Permohonan Data";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css" />
+}
+
+<div class="px-3">
+    <div class="container-fluid">
+        <div class="py-3 py-lg-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="page-title mb-0">Form Permohonan Data</h4>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-none d-lg-block">
+                        <ol class="breadcrumb m-0 float-end">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Permohonan Data</a></li>
+                            <li class="breadcrumb-item active">Informasi Publik</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+                <form class="form-horizontal" role="form" id="formPermohonanData">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Identitas Pemohon</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Nama</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="nama_pemohon" name="nama_pemohon" class="form-control" placeholder="Masukan Nama Lengkap">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Nomor e-KTP</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="nik" name="nik" class="form-control" placeholder="Masukan Nomor e-KTP">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">No Whatsapp</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="nomor" name="nomor" class="form-control" placeholder="Masukan Nomor">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Email</label>
+                                            <div class="col-md-10">
+                                                <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Alamat</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="alamat" name="alamat" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Kota/Kabupaten</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="kota" name="kota" class="form-control" placeholder="Masukan Kota/Kabupaten">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Pekerjaan</label>
+                                            <div class="col-md-10">
+                                                <select class="form-select" id="pekerjaan" name="pekerjaan">
+                                                    <option selected>Pilih Jenis Pekerjaan Anda</option>
+                                                    <option value="ASN/TNI/Polri">PNS / TNI / Polri</option>
+                                                    <option value="Swasta">Pegawai Swasta</option>
+                                                    <option value="Konsultan">Konsultan</option>
+                                                    <option value="Guru/Dosen">Guru / Dosen</option>
+                                                    <option value="Mahasiswa">Mahasiswa</option>
+                                                    <option value="Pelajar">Pelajar</option>
+                                                    <option value="Wiraswasta">Wiraswasta</option>
+                                                    <option value="Lain">Lain-lain</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Nama Kantor/Instansi/Universitas</label>
+                                            <div class="col-md-10">
+                                                <input type="text" id="nama_kantor" name="nama_kantor" class="form-control" placeholder="Masukan Nama Kantor/Instansi/Universitas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Keterangan Permintaan Data</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="simpleinput">Jenis Permintaan</label>
+                                            <div class="col-md-10">
+                                                <select class="form-select" id="jenis" name="jenis">
+                                                    <option selected>Pilih Jenis Permintaan Data</option>
+                                                    <option value="Peta">Data Peta</option>
+                                                    <option value="Hidrologi">Data Hidrologi</option>
+                                                    <option value="Informasi">Data Informasi Umum Organisasi</option>
+                                                    <option value="Infrastruktur">Data Infrastruktur</option>
+                                                    <option value="Teknis">Data Dokumen Teknis/Kebijakan</option>
+                                                    <option value="Lain">Data Lainnya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 row">
+                                            <label class="col-md-2 col-form-label" for="example-textarea">Tujuan Penggunaan Data</label>
+                                            <div class="col-md-10">
+                                                <textarea class="form-control" id="tujuan" name="tujuan" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Upload Berkas</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="mb-3">
+                                            <label class="form-label">File Lampiran Identitas</label>
+                                            <div class="dropzone" id="myDropzone">
+                                                <div class="dz-message">
+                                                    <div class="mb-3">
+                                                        <i class="mdi mdi-cloud-upload display-4 text-muted"></i>
+                                                    </div>
+                                                    <h5>Berkas Identitas Diri Yang Berlaku (KTP/SIM/Paspor)</h5>
+                                                    <p class="text-muted font-13">
+                                                        (Format yang didukung: JPG, PNG, PDF - Maksimal 5MB per file)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Progress Bar -->
+                                        <div class="progress mb-3" id="uploadProgress" style="display: none;">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                                role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        
+                                        <!-- File List -->
+                                        <div id="fileList" class="mb-3"></div>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <div class="mb-3">
+                                            <label class="form-label">File Surat Permohonan</label>
+                                            <div class="dropzone" id="myDropzone">
+                                                <div class="dz-message">
+                                                    <div class="mb-3">
+                                                        <i class="mdi mdi-cloud-upload display-4 text-muted"></i>
+                                                    </div>
+                                                    <h5>Mohon Lampirkan Salinan Surat Resmi Permohonan dalam Format Dokumen</h5>
+                                                    <p class="text-muted font-13">
+                                                        (Format yang didukung: JPG, PNG, PDF, DOC, DOCX - Maksimal 5MB per file)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Progress Bar -->
+                                        <div class="progress mb-3" id="uploadProgress" style="display: none;">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                                role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        
+                                        <!-- File List -->
+                                        <div id="fileList" class="mb-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <div class="d-flex justify-content-end gap-2">
+                                            <!-- Tombol Reset/Clear -->
+                                            <button type="button" class="btn btn-outline-secondary" id="btnReset">
+                                                <i class="mdi mdi-refresh me-1"></i>Reset Form
+                                            </button>
+                                            
+                                            <!-- Tombol Submit Utama -->
+                                            <button type="submit" class="btn btn-success" id="btnSubmit">
+                                                <i class="mdi mdi-send me-1"></i>Kirim Permintaan
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+}

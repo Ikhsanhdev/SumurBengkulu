@@ -3,35 +3,35 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link href="~/lib/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
     <style>
-        .cctv-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 5px;
+        .bg-berawan {
+            background-color: rgba(204, 204, 204, .4) !important;
         }
 
-        .cctv-image {
-            display: block;
-            width: 100%;
-            height: auto;
+        .bg-hujan-ringan {
+            background-color: rgba(57, 166, 245, .6) !important;
         }
 
-        .cctv-overlay {
-            position: absolute;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            width: 100%;
-            padding: 8px 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .bg-hujan-sedang {
+            background-color: rgba(247, 184, 75, .6) !important;
         }
 
-        .zoom-icon i {
-            font-size: 1.2rem;
-            color: #fff;
+        .bg-hujan-lebat {
+            background-color: rgba(242, 131, 35, .6) !important;
+        }
+
+        .bg-hujan-sangat-lebat {
+            background-color: rgba(239, 83, 80, .6) !important;
+        }
+
+        .box-legend {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 10px;
+            margin-right: 0.4rem;
         }
     </style>
 }
@@ -54,212 +54,248 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header bg-dark">
-                        <h4 class="card-title text-white mt-2"><i class="bx bx-cctv bx-fw"></i> CCTV</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="cctv-wrapper">
-                            <a href="https://flooducation.com/BWSSum7/bwssum7bengkuluhilir.jpg" title="CCTV BENGKULU HILIR" data-gallery="#blueimp-gallery">
-                                <img src="https://flooducation.com/BWSSum7/bwssum7bengkuluhilir.jpg" class="img-fluid cctv-image" alt="CCTV">
-                                <div class="cctv-overlay">
-                                    <span class="cctv-title">CCTV BENGKULU HILIR</span>
-                                    <span class="zoom-icon"><i class="bx bx-show-alt"></i></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div> <!--end card body-->
-                </div> <!-- end card-->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #2189c0;">
+                <h4 class="card-title mb-0 text-white"><i class="fa fa-water me-1"></i> POS DUGA AIR</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="awlr-table" class="table table-sm table-hover table-centered m-0 w-100">
+                        <thead>
+                            <tr>
+                                <th class="text-center">NO.</th>
+                                <th>NAMA POS</th>
+                                <th class="text-center">ID LOGGER</th>
+                                <th>LOKASI</th>
+                                <th>WS</th>
+                                <th>DAS</th>
+                                <th class="text-center">TANGGAL</th>
+                                <th class="text-center">TMA rata<sup>2</sup></th>
+                                <th class="text-center">TMA Max</th>
+                                <th class="text-center">TMA Min</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>AWLR AIR BENGKULU (EWS)</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT859</span></td>
+                                <td>Kota Bengkulu, Kec. Muara Bangka Hulu, Rawa Makmur</td>
+                                <td>BENGKULU ALAS TALO</td>
+                                <td>DAS BENGKULU</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">1.77</td>
+                                <td class="text-center">1.6</td>
+                                <td class="text-center">2.15</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>AWLR BENGKULU HILIR</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT741</span></td>
+                                <td>Kab. Bengkulu Tengah, Kec. Talang Empat, Jayakarta</td>
+                                <td>BENGKULU ALAS TALO</td>
+                                <td>DAS BENGKULU</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0.83</td>
+                                <td class="text-center">0.78</td>
+                                <td class="text-center">0.89</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>AWLR BENGKULU HULU</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT729</span></td>
+                                <td>Kab. Bengkulu Tengah, Kec. Karang Tinggi, Penanding</td>
+                                <td>BENGKULU ALAS TALO</td>
+                                <td>DAS BENGKULU</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0.46</td>
+                                <td class="text-center">0.44</td>
+                                <td class="text-center">0.48</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">4</td>
+                                <td>AWLR AIR DIKIT</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT753</span></td>
+                                <td>Kab. Mukomuko, Kec. Air Dikit, Sari Bulan</td>
+                                <td>TERAMANG MUAR</td>
+                                <td>DAS DIKIT</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">1.25</td>
+                                <td class="text-center">1.19</td>
+                                <td class="text-center">1.31</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header bg-success">
+                <h4 class="card-title mb-0 text-white"><i class="fa fa-cloud-rain me-1"></i> POS CURAH HUJAN</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="arr-table" class="table table-sm table-hover table-centered m-0 w-100">
+                        <thead>
+                            <tr>
+                                <th class="text-center">NO.</th>
+                                <th>NAMA POS</th>
+                                <th class="text-center">ID LOGGER</th>
+                                <th>LOKASI</th>
+                                <th>WS</th>
+                                <th>DAS</th>
+                                <th class="text-center">TANGGAL</th>
+                                <th class="text-center">CH <small class="text-muted">(mm)</small></th>
+                                <th class="text-center">Intensitas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>ARR BAJAK</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT172</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>ARR NENGGALO</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT102</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>ARR NENGGALO 2</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT818</span></td>
+                                <td>Kab. Mukomuko, Kec. Teramang Jaya, Nenggalo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">4</td>
+                                <td>ARR SARI BULAN</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT109</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">5</td>
+                                <td>ARR SIDODADI</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT111</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">6</td>
+                                <td>ARR SUKA MAJU</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT173</span></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">7</td>
+                                <td>ARR TANJUNG JAYA</td>
+                                <td class="text-center"><span class="badge badge-outline-blue rounded-1 ms-1">HGT746</span></td>
+                                <td>Kota Bengkulu, Kec. Sungai Serut, Tanjung Jaya</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="text-center">22 Juli 2025</td>
+                                <td class="text-center">0</td>
+                                <td class="text-center">Tidak Ada Hujan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h4 class="card-title text-white mt-2"><i class="bx bx-water bx-fw"></i> POS DUGA AIR</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-centered table-striped table-nowrap mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No</th>
-                                        <th>Nama Pos</th>
-                                        <th class="text-center">Device ID</th>
-                                        <th>Lokasi</th>
-                                        <th>WS</th>
-                                        <th>DAS</th>
-                                        <th class="text-center">Tanggal</th>
-                                        <th class="text-center">TMA Rerata</th>
-                                        <th class="text-center">TMA Min</th>
-                                        <th class="text-center">TMA Max</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>AWLR AIR BENGKULU (EWS)</td>
-                                        <td class="text-center">HGT859</td>
-                                        <td>Kota Bengkulu, Kec. Muara Bangka Hulu, Rawa Makmur</td>
-                                        <td>BENGKULU ALAS TALO</td>
-                                        <td>DAS BENGKULU</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">1.77</td>
-                                        <td class="text-center">1.6</td>
-                                        <td class="text-center">2.15</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>AWLR BENGKULU HILIR</td>
-                                        <td class="text-center">HGT741</td>
-                                        <td>Kab. Bengkulu Tengah, Kec. Talang Empat, Jayakarta</td>
-                                        <td>BENGKULU ALAS TALO</td>
-                                        <td>DAS BENGKULU</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0.83</td>
-                                        <td class="text-center">0.78</td>
-                                        <td class="text-center">0.89</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>AWLR BENGKULU HULU</td>
-                                        <td class="text-center">HGT729</td>
-                                        <td>Kab. Bengkulu Tengah, Kec. Karang Tinggi, Penanding</td>
-                                        <td>BENGKULU ALAS TALO</td>
-                                        <td>DAS BENGKULU</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0.46</td>
-                                        <td class="text-center">0.44</td>
-                                        <td class="text-center">0.48</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">4</td>
-                                        <td>AWLR AIR DIKIT</td>
-                                        <td class="text-center">HGT753</td>
-                                        <td>Kab. Mukomuko, Kec. Air Dikit, Sari Bulan</td>
-                                        <td>TERAMANG MUAR</td>
-                                        <td>DAS DIKIT</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">1.25</td>
-                                        <td class="text-center">1.19</td>
-                                        <td class="text-center">1.31</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            <div class="card-footer pt-0 bg-white mt-2" style="border-bottom-left-radius: 0.4285rem;border-bottom-right-radius: 0.4285rem;">
+                <div class="row mt-4">
+                    <div class="col-12 col-md-12 text-end">
+                        <div class="row justify-content-end mb-2">
+                            <div class="col-auto small">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="box-legend" style="background:rgba(204, 204, 204, .4);"></span>
+                                    :
+                                    <div class="text-start ms-2">
+                                        Tidak Hujan
+                                        <br /> <small class="text-muted">0 mm / hari</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto small">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="box-legend" style="background:rgba(57, 166, 245, .6);"></span>
+                                    :
+                                    <div class="text-start ms-2">
+                                        Hujan Ringan
+                                        <br /> <small class="text-muted">5 - 20 mm / hari</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto small">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="box-legend" style="background:rgba(247, 184, 75, .6);"></span>
+                                    :
+                                    <div class="text-start ms-2">
+                                        Hujan Sedang
+                                        <br /> <small class="text-muted">20 - 50 mm / hari</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto small">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="box-legend" style="background:rgba(242, 131, 35, .6);"></span>
+                                    :
+                                    <div class="text-start ms-2">
+                                        Hujan Lebat
+                                        <br /> <small class="text-muted">50 - 100 mm / hari</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto small">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="box-legend" style="background:rgba(239, 83, 80, .6);"></span> :
+                                    <div class="text-start ms-2">
+                                        Hujan Sangat Lebat
+                                        <br /> <small class="text-muted">> 100 mm / hari</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div> 
-                </div>
-
-                <div class="card">
-                    <div class="card-header bg-success">
-                        <h4 class="card-title text-white mt-2"><i class="bx bx-cloud-rain bx-fw"></i> POS CURAH HUJAN</h4>
+                        <small>Sumber : <a class="fst-italic" href="javascript:void(0)" onclick="window.open('/data/BMKG-Buletin-Meteorologi-Edisi-Maret-2020.pdf', '_blank', 'width=500, height=500'); return false;">BMKG-Buletin-Meteorologi-Edisi-Maret-2020</a></small>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-centered table-striped table-nowrap mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No</th>
-                                        <th>Nama Pos</th>
-                                        <th class="text-center">Device ID</th>
-                                        <th>Lokasi</th>
-                                        <th>WS</th>
-                                        <th>DAS</th>
-                                        <th class="text-center">Tanggal</th>
-                                        <th class="text-center">CH</th>
-                                        <th class="text-center">Intensitas</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>ARR BAJAK</td>
-                                        <td class="text-center">HGT172</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>ARR NENGGALO</td>
-                                        <td class="text-center">HGT102</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>ARR NENGGALO 2</td>
-                                        <td class="text-center">HGT818</td>
-                                        <td>Kab. Mukomuko, Kec. Teramang Jaya, Nenggalo</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">4</td>
-                                        <td>ARR SARI BULAN</td>
-                                        <td class="text-center">HGT109</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">5</td>
-                                        <td>ARR SIDODADI</td>
-                                        <td class="text-center">HGT111</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">6</td>
-                                        <td>ARR SUKA MAJU</td>
-                                        <td class="text-center">HGT173</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">7</td>
-                                        <td>ARR TANJUNG JAYA</td>
-                                        <td class="text-center">HGT746</td>
-                                        <td>Kota Bengkulu, Kec. Sungai Serut, Tanjung Jaya</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td class="text-center">22 Juli 2025</td>
-                                        <td class="text-center">0</td>
-                                        <td class="text-center">Tidak Ada Hujan</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div> 
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+@* <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
     <div class="slides"></div>
     <h3 class="title"></h3>
     <a class="prev">‹</a>
@@ -271,4 +307,4 @@
 
 @section Scripts {
     <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-}
+} *@
